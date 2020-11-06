@@ -22,7 +22,7 @@ cd SAGG
 python3 SteamAchievements.py
 ```
 
-Then input the steam game's App ID, which can be found once you open the game's store page, it's in the URL, or you can search App ID at [SteamDB](https://steamdb.info).
+Then input the steam game's App ID, which can be found when you open the game's store page, it's in the URL, or you can search App ID at [SteamDB](https://steamdb.info).
 
 The results will be stored in the directory named after the game's name.
 
