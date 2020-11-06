@@ -27,7 +27,7 @@ def get_achieve_info():
 		descriptions = list([])
 
 		for i in range(len(picture_soup)):
-			pictures_q.append((picture_soup[i].get("src"), title_soup[i].string + ".jpg", os.path.join(PATH, GAME_NAME, title_soup[i].string + ".jpg")))
+			pictures_q.append((picture_soup[i].get("src"), str(i) + "_" + title_soup[i].string + ".jpg", os.path.join(PATH, GAME_NAME, title_soup[i].string + ".jpg")))
 			titles.append(title_soup[i].string)
 			descriptions.append(description_soup[i].string)
 
