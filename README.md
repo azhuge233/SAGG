@@ -26,6 +26,8 @@ Then input the steam game's App ID, which can be found once you open the game's 
 
 The results will be stored in the directory named after the game's name.
 
+The results will be in Chinese by default, you can change the Accept-Language header in SteamAchievements.py to English only to get the English results.
+
 ## Screenshots
 
 ![1](https://github.com/azhuge233/SAGG/raw/main/1.png)
