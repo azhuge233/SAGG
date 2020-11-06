@@ -28,3 +28,9 @@ The results will be stored in the directory named after the game's name.
 
 ## Screenshots
 
+![1](https://github.com/azhuge233/SAGG/raw/main/1.png)
+
+![2](https://github.com/azhuge233/SAGG/raw/main/2.png)
+
+![3](https://github.com/azhuge233/SAGG/raw/main/3.png)
+
