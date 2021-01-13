@@ -125,3 +125,7 @@ dmypy.json
 .pyre/
 .DS_Store
 log.txt
+
+# Pics
+.jpg
+.png
