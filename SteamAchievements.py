@@ -1,4 +1,5 @@
-import platform, os, multiprocessing
+import os
+import multiprocessing
 from MyClass.GETSOUP import *
 from MyClass.LOG import *
 
@@ -6,17 +7,24 @@ URL = "https://steamcommunity.com/stats/{0}/achievements"
 HEAD["Accept-Language"] = "zh-CN,zh;q=0.5,en-US;"
 HEAD["User-Agent"] = "Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0"
 PATH = "."
+FORBID_WORDS = ["<", ">", "|", ":", "?", "/", "\"", "*"]
 
 
 GAME_NAME = ""
 logger.name = "SA"
 
 
+def name_filter(game_name):
+	for word in FORBID_WORDS:
+		game_name = game_name.replace(word, "")
+	return game_name
+
+
 def get_achieve_info():
 	try:
 		global GAME_NAME
 		soup = get_url_single(url=URL, headers=HEAD)
-		GAME_NAME = soup.select(".profile_small_header_texture h1")[0].string.replace(":", "").replace("*", "")
+		GAME_NAME = name_filter(soup.select(".profile_small_header_texture h1")[0].string.replace(":", "").replace("*", ""))
 		picture_soup = soup.select(".achieveRow img")
 		title_soup = soup.select(".achieveTxt h3")
 		description_soup = soup.select(".achieveTxt h5")
@@ -83,7 +91,7 @@ def wrap_steam_format(titles, descriptions):
 	result = "[table]\n  [tr]\n    [th]名称[/th]\n    [th]说明[/th]\n    [th]达成条件[/th]\n  [/tr]\n"
 
 	for i in range(len(titles)):
-		if descriptions[i] == None:
+		if descriptions[i] is None:
 			result += trans_to_cols(titles[i], "无")
 		else:
 			result += trans_to_cols(titles[i], descriptions[i])
@@ -130,7 +138,6 @@ def main():
 
 	logger.warning("Job Done.")
 	logger.info("\n\n")
-
 
 
 if __name__ == "__main__":
