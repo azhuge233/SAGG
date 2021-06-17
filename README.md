@@ -14,15 +14,30 @@ This idea came into my head after I wrote a achievements guide about Serious Sam
 
 ## Usage
 
-Simply execute
+Clone the repository first
 
 ```shell
 git clone https://github.com/azhuge233/SAGG.git
 cd SAGG
+```
+
+### CLI
+
+Run
+
+```shell
 python3 SteamAchievements.py
 ```
 
-Then input the steam game's App ID, which can be found when you open the game's store page, it's in the URL, or you can search App ID at [SteamDB](https://steamdb.info).
+### GUI
+
+Run
+
+```shell
+python3 SteamAchievements_Gooey.py
+```
+
+Then type in the steam game's App ID, which can be found when you open the game's store page, it's in the URL, or you can search App ID at [SteamDB](https://steamdb.info).
 
 The results will be stored in the directory named after the game's name.
 
@@ -30,9 +45,18 @@ The results will be in Chinese by default, you can change the Accept-Language he
 
 ## Screenshots
 
-![1](https://github.com/azhuge233/SAGG/raw/main/1.png)
+### CLI
 
-![2](https://github.com/azhuge233/SAGG/raw/main/2.png)
+![CLI1](./pics/CLI1.png)
 
-![3](https://github.com/azhuge233/SAGG/raw/main/3.png)
+![CLI2](./pics/CLI2.png)
 
+![CLI3](./pics/CLI3.png)
+
+### GUI
+
+![GUI1](./pics/GUI1.png)
+
+![GUI2](./pics/GUI2.png)
+
+![GUI3](./pics/GUI3.png)
